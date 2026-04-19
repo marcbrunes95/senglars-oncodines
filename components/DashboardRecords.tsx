@@ -1,24 +1,3 @@
-import etapes from "@/app/data/ruta.json";
-
-type Etapa = {
-  etapa: number;
-  corredores: string;
-  tramo: string;
-  km: number;
-  desnivell: number;
-  ritme: string;
-  tiempo: string;
-  coords: [number, number];
-};
-
-const data = etapes as unknown as Etapa[];
-
-const fastest   = data.reduce((a, b) => (a.ritme < b.ritme ? a : b));
-const steepest  = data.reduce((a, b) => (a.desnivell > b.desnivell ? a : b));
-const longest   = data.reduce((a, b) => (a.km > b.km ? a : b));
-const totalKm        = data.reduce((sum, e) => sum + e.km, 0);
-const totalDesnivell = data.reduce((sum, e) => sum + e.desnivell, 0);
-
 interface RecordCardProps {
   emoji: string;
   title: string;
@@ -51,7 +30,7 @@ function RecordCard({ emoji, title, subtitle, value, detail, accent }: RecordCar
       >
         {value}
       </p>
-      {detail && <p className="text-slate-500 text-xs">{detail}</p>}
+      {detail && <p className="text-slate-500 text-xs leading-relaxed">{detail}</p>}
     </div>
   );
 }
@@ -63,34 +42,48 @@ export default function DashboardRecords() {
         Records de l&apos;Equip
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <RecordCard
           emoji="⚡"
           title="El Correcaminos"
-          subtitle={`Etapa ${fastest.etapa} · ${fastest.corredores}`}
-          value={`${fastest.ritme} min/km`}
-          detail={fastest.tramo}
+          subtitle="Etapa 6 · MARC-XAVI"
+          value="05:56 min/km"
+          detail="Santa Eulàlia de Ronçana → Caldes de Montbui. La més ràpida de la cursa."
         />
         <RecordCard
           emoji="🏔️"
-          title="L'Escalador"
-          subtitle={`Etapa ${steepest.etapa} · ${steepest.corredores}`}
-          value={`+${steepest.desnivell} m`}
-          detail={steepest.tramo}
+          title="L'Escalador (Etapa Reina)"
+          subtitle="Etapa 7 · JOAN-PALAU"
+          value="+571 m D+"
+          detail="Caldes de Montbui → Sant Sebastià de Montmajor. El desnivell més bèstia."
+          accent
         />
         <RecordCard
-          emoji="👑"
-          title="L'Etapa Reina"
-          subtitle={`Etapa ${longest.etapa} · ${longest.corredores}`}
-          value={`${longest.km} km`}
-          detail={longest.tramo}
-          accent
+          emoji="💪"
+          title="Distància Seguida"
+          subtitle="Etapes 4+5 · JOSEP"
+          value="20 km sense parar"
+          detail="+660m D+ · El Figaró → Santa Eulàlia de Ronçana. Una barbaritat."
+        />
+        <RecordCard
+          emoji="🚀"
+          title="Baixada Èpica"
+          subtitle="Etapa 3 · PERE-JOAN"
+          value="A putu sprint!"
+          detail="Sant Miquel Sesperxes → El Figaró · 06:09 min/km · 79m D+."
+        />
+        <RecordCard
+          emoji="🦾"
+          title="Míster de Ferro"
+          subtitle="MIQUEL"
+          value="~10km amb crosses"
+          detail="Entre avituallaments. Quasi 10km sense córrer i sense queixar-se. Una barbaritat!"
         />
         <RecordCard
           emoji="🐗"
           title="Resum Total"
-          value={`${totalKm.toFixed(1)} km`}
-          detail={`+${totalDesnivell} m desnivell acumulat`}
+          value="102.51 km"
+          detail="+3.512 m desnivell acumulat · 11 etapes · 1 equip"
         />
       </div>
     </section>

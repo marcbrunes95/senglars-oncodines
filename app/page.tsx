@@ -2,12 +2,13 @@ import Image from "next/image";
 import SenglarLogo from "@/components/SenglarLogo";
 import DashboardRecords from "@/components/DashboardRecords";
 import RouteSection from "@/components/RouteSection";
+import StatsTable from "@/components/StatsTable";
 import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
   const eventName = "Oncodines Trail";
   const teamName = "Senglars de Bardissa";
-  const subtitle = "Una etapa. Un equip. Una gesta.";
+  const subtitle = "Una experiència. Un equip. Una gesta.";
 
   return (
     <main className="flex-1 flex flex-col w-full">
@@ -40,6 +41,7 @@ export default function Home() {
             src="/foto-equip.jpg"
             alt="L'equip Senglars de Bardissa a l'Oncodines Trail"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -55,6 +57,9 @@ export default function Home() {
           <DashboardRecords />
         </div>
       </section>
+
+      {/* ── Estadístiques ─────────────────────────── */}
+      <StatsTable />
 
       {/* ── Equip ─────────────────────────────────── */}
       <TeamSection />

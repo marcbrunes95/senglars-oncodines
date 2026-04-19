@@ -1,9 +1,88 @@
 [
-  {"id": 1, "nom": "MIQUEL", "titol": "El Míster", "descripcio": "La brúixola de l'equip. La seva inesperada lesió ens ha permès tenir un gran entrenador. Sense la seva direcció, encara estaríem donant voltes per la muntanya.", "etapes": []},
-  {"id": 2, "nom": "JOAN", "titol": "El Capità", "descripcio": "El líder natural. Un referent absolut, tant a la pista marcant el ritme com fora de la pista fent pinya.", "etapes": [3, 6, 7, 11], "distanciaTotal": 28.78, "desnivellTotal": 943, "ritmeMitja": "08:29", "tempsTotal": "04:13:42"},
-  {"id": 3, "nom": "JOSEP", "titol": "La Bèstia", "descripcio": "L'incombustible. Un autèntic destroyer capaç de devorar quilòmetres i desnivell sense despentinar-se.", "etapes": [1, 4, 5, 9, 10], "distanciaTotal": 39.38, "desnivellTotal": 1257, "ritmeMitja": "06:38", "tempsTotal": "04:20:22"},
-  {"id": 4, "nom": "PERE", "titol": "La Resistència", "descripcio": "El mur de contenció. Demostra que quan les cames ja no poden més, és el cap i la força de voluntat el que et fa avançar.", "etapes": [3, 5, 8, 11], "distanciaTotal": 37.29, "desnivellTotal": 986, "ritmeMitja": "07:27", "tempsTotal": "04:37:27"},
-  {"id": 5, "nom": "XAVI", "titol": "El Doc", "descripcio": "L'àngel de la guarda amb motxilla. Ha sigut el nostre salvador i no se li ha sentit ni mitja queixa.", "etapes": [2, 6, 8, 10], "distanciaTotal": 38.36, "desnivellTotal": 1312, "ritmeMitja": "07:37", "tempsTotal": "04:44:43"},
-  {"id": 6, "nom": "PALAU", "titol": "L'MVP", "descripcio": "El fitxatge estel·lar. Ha arribat, ha vist el panorama i ho ha donat absolutament tot fins buidar-se.", "etapes": [2, 4, 10], "distanciaTotal": 30.35, "desnivellTotal": 1136, "ritmeMitja": "07:36", "tempsTotal": "03:42:10"},
-  {"id": 7, "nom": "MARC", "titol": "El Pupes Gloriós", "descripcio": "L'home exigent que hi posa l'èpica i l'estadística. Una demostració brutal de com plantar cara a l'adversitat.", "etapes": [1, 6, 9], "distanciaTotal": 26.90, "desnivellTotal": 819, "ritmeMitja": "06:26", "tempsTotal": "02:52:48"}
+  {
+    "id": 1,
+    "nom": "MIQUEL",
+    "titol": "El Míster",
+    "foto": "/miquel.jpg",
+    "descripcio": "La brúixola de l'equip. La seva inesperada lesió ens ha permès tenir un gran entrenador. Sense la seva direcció, encara estaríem donant voltes per la muntanya.",
+    "etapes": []
+  },
+  {
+    "id": 2,
+    "nom": "JOAN",
+    "titol": "El Capità",
+    "foto": "/joan.jpg",
+    "descripcio": "El líder natural. Un referent absolut, tant a la pista marcant el ritme com fora de la pista fent pinya.",
+    "etapes": [3, 7, 11],
+    "distanciaTotal": 27.38,
+    "desnivellTotal": 943,
+    "desnivellKm": "34.44",
+    "ritmeMitja": "08:57",
+    "tempsTotal": "04:13"
+  },
+  {
+    "id": 3,
+    "nom": "JOSEP",
+    "titol": "La Bèstia",
+    "foto": "/josep.jpg",
+    "descripcio": "L'incombustible. Un autèntic destroyer capaç de devorar quilòmetres i desnivell sense despentinar-se.",
+    "etapes": [1, 4, 5, 9],
+    "distanciaTotal": 37.74,
+    "desnivellTotal": 1257,
+    "desnivellKm": "33.31",
+    "ritmeMitja": "06:57",
+    "tempsTotal": "04:20"
+  },
+  {
+    "id": 4,
+    "nom": "PERE",
+    "titol": "La Resistència",
+    "foto": "/pere.jpg",
+    "descripcio": "El mur de contenció. Demostra que quan les cames ja no poden més, és el cap i la força de voluntat el que et fa avançar.",
+    "etapes": [3, 5, 8, 11],
+    "distanciaTotal": 37.29,
+    "desnivellTotal": 986,
+    "desnivellKm": "26.44",
+    "ritmeMitja": "07:27",
+    "tempsTotal": "04:37"
+  },
+  {
+    "id": 5,
+    "nom": "XAVI",
+    "titol": "El Doc",
+    "foto": "/xavi.jpg",
+    "descripcio": "L'àngel de la guarda amb motxilla. Ha sigut el nostre salvador i no se li ha sentit ni mitja queixa.",
+    "etapes": [2, 6, 8, 10],
+    "distanciaTotal": 37.39,
+    "desnivellTotal": 1312,
+    "desnivellKm": "35.09",
+    "ritmeMitja": "07:45",
+    "tempsTotal": "04:44"
+  },
+  {
+    "id": 6,
+    "nom": "PALAU",
+    "titol": "L'MVP",
+    "foto": "/palau.jpg",
+    "descripcio": "El fitxatge estel·lar. Ha arribat, ha vist el panorama i ho ha donat absolutament tot fins buidar-se.",
+    "etapes": [2, 4, 7, 10],
+    "distanciaTotal": 38.5,
+    "desnivellTotal": 1707,
+    "desnivellKm": "44.34",
+    "ritmeMitja": "09:06",
+    "tempsTotal": "05:48"
+  },
+  {
+    "id": 7,
+    "nom": "MARC",
+    "titol": "El Pupes Gloriós",
+    "foto": "/marc.jpg",
+    "descripcio": "L'home exigent que hi posa l'èpica i l'estadística. Una demostració brutal de com plantar cara a l'adversitat.",
+    "etapes": [1, 6, 9],
+    "distanciaTotal": 26.72,
+    "desnivellTotal": 819,
+    "desnivellKm": "30.65",
+    "ritmeMitja": "06:29",
+    "tempsTotal": "02:52"
+  }
 ]

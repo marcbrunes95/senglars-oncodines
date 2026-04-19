@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import MapWrapper from "@/components/MapWrapper";
 import StageStatistics from "@/components/StageStatistics";
+import ElevationProfile from "@/components/ElevationProfile";
 import etapesData from "@/app/data/ruta.json";
 
 type Etapa = {
@@ -19,7 +21,7 @@ type Etapa = {
   coords: [number, number];
 };
 
-const etapes = etapesData as Etapa[];
+const etapes = etapesData as unknown as Etapa[];
 
 export default function RouteSection() {
   const [selectedId, setSelectedId] = useState(1);
@@ -32,9 +34,23 @@ export default function RouteSection() {
           La Ruta
         </h2>
 
+        {/* Header visual */}
+        <div className="relative w-full h-64 rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+          <Image
+            src="/header-ruta.jpg"
+            alt="Paisatge de l'Oncodines Trail"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+
         <MapWrapper selectedId={selectedId} onSelect={setSelectedId} />
 
-        {/* key força remuntatge → rellança l'animació en canviar d'etapa */}
+        <ElevationProfile selectedId={selectedId} />
+
+        {/* key forces remount → restarts animation on stage change */}
         <StageStatistics key={selectedId} stage={selected} />
       </div>
     </section>

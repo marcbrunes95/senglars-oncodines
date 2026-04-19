@@ -65,7 +65,7 @@ export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapP
           center={CENTER}
           zoom={11}
           style={{ width: "100%", height: "100%" }}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

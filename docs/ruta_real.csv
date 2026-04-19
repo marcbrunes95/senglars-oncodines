@@ -1,0 +1,25 @@
+,,,,,,REAL,,,
+CORREDORS,Etapa,Inici / Final,Distància (km),Desnivell (+),Desnivell/km,Ritme,Hora inici,Hora arribada,Temps en moviment
+JOSEP-MARC,1,Castellterçol - Castellcir,"9,33",257,28,06:28,8:01,9:01,1:00
+XAVI-PALAU,2,Castellcir - Sant Miquel Sesperxes,"12,02",453,38,07:05,9:01,10:26,1:25
+PERE-JOAN,3,Sant Miquel Sesperxes - El Figaró,"7,54",79,10,06:09,10:26,11:13,0:46
+JOSEP-PALAU,4,El Figaró - La Garriga,"8,76",389,44,08:01,11:13,12:23,1:10
+JOSEP-PERE,5,La Garriga - Santa Eulàlia de Ronçana,"11,28",271,24,06:17,12:23,13:34,1:10
+MARC-XAVI,6,Santa Eulàlia de Ronçana - Caldes de Montbui,"9,02",222,25,05:56,13:34,14:27,0:53
+,,Punt control 1: hora límit,,,,,,16h*,
+JOAN-PALAU,7,Caldes de Montbui - Sant Sebastià de Montmajor,"10,58",571,54,11:57,14:27,16:34,2:06
+XAVI-PERE,8,Sant Sebastià de Montmajor - Caldes de Montbui,"9,21",343,37,08:37,16:34,17:53,1:19
+JOSEP-MARC,9,Caldes de Montbui - Bigues i Riells del Fai,"8,37",340,41,07:03,17:53,18:52,0:59
+PALAU-XAVI,10,Bigues i Riells del Fai - Sant Miquel del Fai,"7,14",294,41,09:21,18:52,19:59,1:06
+,,Punt control 2: hora límit,,,,,,22.15h*,
+JOAN-PERE,11,Sant Miquel del Fai - Sant Feliu de Codines,"9,26",293,32,08:44,19:59,21:20,1:20
+,,,,,,,,,
+,,,,,,,,,
+,Etapes,Distància Total (km),Desnivell (+) Total (m),Desnivell/km,Ritme mitjà global,Temps total,,,
+JOAN,3-7-11,"27,38",943,"34,44",08:57,4:13,,,
+JOSEP,1-4-5-9,"37,74",1257,"33,31",06:57,4:20,,,
+PERE,3-5-8-11,"37,29",986,"26,44",07:27,4:37,,,
+XAVI,2-6-8-10,"37,39",1312,"35,09",07:45,4:44,,,
+PALAU,2-4-7-10,"38,5",1707,"44,34",09:06,5:48,,,
+MARC,1-6-9,"26,72",819,"30,65",06:29,2:52,,,
+,,"102,51",3512,"102,13",,,,,
