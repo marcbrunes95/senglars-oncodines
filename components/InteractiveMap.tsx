@@ -2,6 +2,7 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useEffect, useRef } from "react";
 import { MapContainer, TileLayer, Polyline, Marker, Popup } from "react-leaflet";
 import etapes from "@/app/data/ruta.json";
 
@@ -44,11 +45,23 @@ const activeIcon = L.divIcon({
 const CENTER: [number, number] = [41.69, 2.21];
 
 export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapProps) {
+  const mapRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, []);
+
   return (
     <div className="w-full flex flex-col md:flex-row gap-4">
       {/* Map */}
       <div className="w-full md:w-2/3 h-[50vh] md:h-[480px] rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
         <MapContainer
+          ref={mapRef}
           center={CENTER}
           zoom={11}
           style={{ width: "100%", height: "100%" }}
