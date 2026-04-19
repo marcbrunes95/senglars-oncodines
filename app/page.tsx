@@ -1,14 +1,7 @@
-import dynamic from "next/dynamic";
 import { Users } from "lucide-react";
 import SenglarLogo from "@/components/SenglarLogo";
 import DashboardRecords from "@/components/DashboardRecords";
-
-const InteractiveMap = dynamic(() => import("@/components/InteractiveMap"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[50vh] rounded-2xl bg-slate-800 animate-pulse border border-slate-700" />
-  ),
-});
+import MapWrapper from "@/components/MapWrapper";
 
 export default function Home() {
   const eventName = "Oncodines Trail";
@@ -61,7 +54,7 @@ export default function Home() {
           <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-bold tracking-tight text-slate-50">
             La Ruta
           </h2>
-          <InteractiveMap />
+          <MapWrapper />
         </div>
       </section>
 
