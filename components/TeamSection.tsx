@@ -120,7 +120,7 @@ function MemberCard({ membre }: { membre: Membre }) {
 
 export default function TeamSection() {
   return (
-    <section id="equip" className="bg-slate-800/50 border-t border-slate-800 px-4 py-12">
+    <section id="equip" className="bg-slate-800/50 border-t border-slate-800 px-4 py-8 md:py-12">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
         <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-bold tracking-tight text-slate-50">
           L&apos;Equip: Llegenda a l&apos;Oncodines

@@ -122,7 +122,7 @@ export default function StatsTable() {
   );
 
   return (
-    <section id="estadistiques" className="bg-slate-900 px-4 py-12">
+    <section id="estadistiques" className="bg-slate-900 px-4 py-8 md:py-12">
       <div className="max-w-5xl mx-auto flex flex-col gap-8">
         <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-bold tracking-tight text-slate-50">
           Estadístiques

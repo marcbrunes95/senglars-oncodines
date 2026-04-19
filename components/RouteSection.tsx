@@ -43,7 +43,7 @@ export default function RouteSection() {
   const selected = etapes.find((e) => e.etapa === selectedId) ?? etapes[0];
 
   return (
-    <section id="ruta" className="bg-slate-800/50 border-y border-slate-800 px-4 py-12">
+    <section id="ruta" className="bg-slate-800/50 border-y border-slate-800 px-4 py-8 md:py-12">
       <div className="max-w-5xl mx-auto flex flex-col gap-6">
         <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-bold tracking-tight text-slate-50">
           La Ruta

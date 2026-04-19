@@ -59,7 +59,7 @@ export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapP
   return (
     <div className="w-full flex flex-col md:flex-row gap-4">
       {/* Map */}
-      <div className="w-full md:w-2/3 h-[50vh] md:h-[480px] rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+      <div className="w-full md:w-2/3 h-[42vh] md:h-[480px] rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
         <MapContainer
           ref={mapRef}
           center={CENTER}
@@ -112,7 +112,7 @@ export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapP
       </div>
 
       {/* Llista d'etapes clicable */}
-      <div className="w-full md:w-1/3 max-h-[50vh] md:max-h-[480px] overflow-y-auto flex flex-col gap-2 pr-1">
+      <div className="w-full md:w-1/3 max-h-[42vh] md:max-h-[480px] overflow-y-auto flex flex-col gap-2 pr-1">
         {data.map((etapa) => (
           <button
             key={etapa.etapa}
