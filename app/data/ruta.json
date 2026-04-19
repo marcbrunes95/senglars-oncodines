@@ -1,29 +1,13 @@
 [
-  {
-    "corredores": "JOSEP-MARC",
-    "etapa": 1,
-    "iniciFinal": "Castellterçol - Castellcir",
-    "distanciaKm": 9.51,
-    "desnivellPositiu": 257,
-    "ritme": "00:06:21",
-    "tempsMoviment": "01:00:19"
-  },
-  {
-    "corredores": "XAVI-PALAU",
-    "etapa": 2,
-    "iniciFinal": "Castellcir - Sant Miquel Sesperxes",
-    "distanciaKm": 12.99,
-    "desnivellPositiu": 453,
-    "ritme": "00:06:34",
-    "tempsMoviment": "01:25:13"
-  },
-  {
-    "corredores": "PERE-JOAN",
-    "etapa": 3,
-    "iniciFinal": "Sant Miquel Sesperxes - El Figaró",
-    "distanciaKm": 7.54,
-    "desnivellPositiu": 79,
-    "ritme": "00:06:09",
-    "tempsMoviment": "00:46:24"
-  }
+  {"etapa": 1, "corredores": "JOSEP - MARC", "tramo": "Castellterçol - Castellcir", "km": 9.51, "desnivell": 257, "ritme": "06:21", "tiempo": "01:00:19", "coords": [41.7513, 2.1205]},
+  {"etapa": 2, "corredores": "XAVI - PALAU", "tramo": "Castellcir - St. Miquel Sesperxes", "km": 12.99, "desnivell": 453, "ritme": "06:34", "tiempo": "01:25:13", "coords": [41.7483, 2.2133]},
+  {"etapa": 3, "corredores": "PERE - JOAN", "tramo": "St. Miquel Sesperxes - El Figaró", "km": 7.54, "desnivell": 79, "ritme": "06:09", "tiempo": "00:46:24", "coords": [41.7225, 2.2736]},
+  {"etapa": 4, "corredores": "JOSEP - PALAU", "tramo": "El Figaró - La Garriga", "km": 9.24, "desnivell": 386, "ritme": "07:07", "tiempo": "01:05:44", "coords": [41.6845, 2.2861]},
+  {"etapa": 5, "corredores": "JOSEP - MARC", "tramo": "La Garriga - Sta. Eulàlia Ronçana", "km": 11.23, "desnivell": 240, "ritme": "06:40", "tiempo": "01:14:58", "coords": [41.6541, 2.2263]},
+  {"etapa": 6, "corredores": "JOAN - XAVI", "tramo": "Sta. Eulàlia - Caldes de Montbui", "km": 9.02, "desnivell": 222, "ritme": "05:56", "tiempo": "00:53:28", "coords": [41.6331, 2.1622]},
+  {"etapa": 7, "corredores": "JOAN - ORIOL", "tramo": "Caldes - St. Sebastià Montmajor", "km": 11.98, "desnivell": 571, "ritme": "10:33", "tiempo": "02:06:22", "coords": [41.6331, 2.1150]},
+  {"etapa": 8, "corredores": "XAVI - PERE", "tramo": "St. Sebastià - Caldes de Montbui", "km": 9.21, "desnivell": 343, "ritme": "08:37", "tiempo": "01:19:18", "coords": [41.6331, 2.1622]},
+  {"etapa": 9, "corredores": "Josep - MARC", "tramo": "Caldes - Bigues i Riells", "km": 8.37, "desnivell": 340, "ritme": "09:46", "tiempo": "01:21:49", "coords": [41.6775, 2.2231]},
+  {"etapa": 10, "corredores": "Josep - XAVI", "tramo": "Bigues - St. Miquel del Fai", "km": 7.57, "desnivell": 273, "ritme": "09:53", "tiempo": "01:14:49", "coords": [41.7142, 2.1908]},
+  {"etapa": 11, "corredores": "JOAN - PERE", "tramo": "St. Miquel del Fai - St. Feliu Codines", "km": 8.79, "desnivell": 313, "ritme": "08:03", "tiempo": "01:10:43", "coords": [41.6872, 2.1642]}
 ]
