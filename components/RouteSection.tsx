@@ -22,6 +22,28 @@ type Etapa = {
 
 const etapes = etapesData as unknown as Etapa[];
 
+// Stage zones calculated from official image km markers (total 101.37 km)
+// Chart area starts at ~3.5% (y-axis label margin) and spans ~94% of image width
+const CHART_LEFT = 3.5;
+const CHART_SPAN = 94;
+const IMAGE_KM = [9.56, 12.02, 7.16, 8.76, 11.72, 8.28, 10.58, 9.00, 7.90, 7.30, 9.09];
+const TOTAL_KM = IMAGE_KM.reduce((a, b) => a + b, 0);
+
+const ZONES = (() => {
+  const zones: { stage: number; left: number; width: number }[] = [];
+  let cumFrac = 0;
+  IMAGE_KM.forEach((km, i) => {
+    const frac = km / TOTAL_KM;
+    zones.push({
+      stage: i + 1,
+      left: CHART_LEFT + cumFrac * CHART_SPAN,
+      width: frac * CHART_SPAN,
+    });
+    cumFrac += frac;
+  });
+  return zones;
+})();
+
 export default function RouteSection() {
   const [selectedId, setSelectedId] = useState(1);
   const selected = etapes.find((e) => e.etapa === selectedId) ?? etapes[0];
@@ -33,14 +55,35 @@ export default function RouteSection() {
           La Ruta
         </h2>
 
-        {/* Header visual */}
-        <div className="w-full h-64 rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+        {/* Header visual: perfil d'elevació oficial amb zones clicables per etapa */}
+        <div className="relative w-full rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40 select-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/header-ruta.jpg"
-            alt="Paisatge de l'Oncodines Trail"
-            className="w-full h-full object-cover"
+            alt="Perfil d'elevació oficial · Oncodines Trail"
+            className="w-full h-auto block"
+            draggable={false}
           />
+          {/* Overlay interactiu: una zona per etapa */}
+          <div className="absolute inset-0 pointer-events-none">
+            {ZONES.map((zone) => {
+              const isSelected = zone.stage === selectedId;
+              return (
+                <button
+                  key={zone.stage}
+                  onClick={() => setSelectedId(zone.stage)}
+                  className={`absolute top-0 bottom-0 pointer-events-auto transition-all duration-200 cursor-pointer ${
+                    isSelected
+                      ? "border-2 border-amber-400 bg-amber-400/25 shadow-[inset_0_0_0_1px_rgba(251,191,36,0.4)]"
+                      : "border border-transparent hover:bg-white/8 hover:border-white/20"
+                  }`}
+                  style={{ left: `${zone.left}%`, width: `${zone.width}%` }}
+                  aria-label={`Etapa ${zone.stage}`}
+                  title={`Etapa ${zone.stage}`}
+                />
+              );
+            })}
+          </div>
         </div>
 
         <MapWrapper selectedId={selectedId} onSelect={setSelectedId} />
