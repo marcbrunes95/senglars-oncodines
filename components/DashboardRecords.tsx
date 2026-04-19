@@ -17,8 +17,8 @@ function RecordCard({ emoji, title, subtitle, value, detail, accent }: RecordCar
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="text-xl">{emoji}</span>
-        <span className="font-[family-name:var(--font-barlow)] text-xs font-semibold tracking-widest uppercase text-slate-400">
+        <span className="text-2xl">{emoji}</span>
+        <span className="font-[family-name:var(--font-barlow)] text-base font-bold tracking-wide uppercase text-slate-200">
           {title}
         </span>
       </div>

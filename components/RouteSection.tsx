@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import MapWrapper from "@/components/MapWrapper";
 import StageStatistics from "@/components/StageStatistics";
 import ElevationProfile from "@/components/ElevationProfile";
@@ -35,14 +34,12 @@ export default function RouteSection() {
         </h2>
 
         {/* Header visual */}
-        <div className="relative w-full h-64 rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
-          <Image
+        <div className="w-full h-64 rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/header-ruta.jpg"
             alt="Paisatge de l'Oncodines Trail"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
           />
         </div>
 

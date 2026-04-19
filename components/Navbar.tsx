@@ -8,6 +8,7 @@ import SenglarLogo from "@/components/SenglarLogo";
 const links = [
   { href: "#ruta", label: "La Ruta" },
   { href: "#records", label: "Records" },
+  { href: "#estadistiques", label: "Estadístiques" },
   { href: "#equip", label: "L'Equip" },
 ];
 
