@@ -63,7 +63,7 @@
     "id": 6,
     "nom": "PALAU",
     "titol": "L'MVP",
-    "foto": "/palau.jpg",
+    "foto": "/palau.jpg?v=2",
     "descripcio": "El fitxatge estel·lar. Incorporat a darrera hora, ha trencat tots els esquemes. Ha arribat, ha vist el panorama i ho ha donat absolutament tot fins buidar-se. Una màquina de sumar energia positiva i un motor per a tot l'equip en els moments i trams clau.",
     "etapes": [2, 4, 7, 10],
     "distanciaTotal": 38.5,
