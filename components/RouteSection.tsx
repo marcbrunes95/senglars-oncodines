@@ -25,7 +25,7 @@ const etapes = etapesData as unknown as Etapa[];
 // CHART_LEFT: left margin for the y-axis labels (~3.5% of image width)
 // CHART_SPAN: usable chart area width (~91% of image width)
 const CHART_LEFT = 3.5;
-const CHART_SPAN = 91;
+const CHART_SPAN = 94;
 const IMAGE_KM = [9.56, 12.02, 7.16, 8.76, 11.72, 8.28, 10.58, 9.00, 7.90, 7.30, 9.09];
 const TOTAL_KM = IMAGE_KM.reduce((a, b) => a + b, 0);
 
