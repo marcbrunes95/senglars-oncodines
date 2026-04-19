@@ -3,7 +3,7 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, Polyline, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Polyline, Marker, Popup, LayersControl } from "react-leaflet";
 import etapes from "@/app/data/ruta.json";
 
 type Etapa = {
@@ -67,10 +67,20 @@ export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapP
           style={{ width: "100%", height: "100%" }}
           scrollWheelZoom={true}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          />
+          <LayersControl position="topright">
+            <LayersControl.BaseLayer checked name="OpenStreetMap">
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              />
+            </LayersControl.BaseLayer>
+            <LayersControl.BaseLayer name="Satèl·lit">
+              <TileLayer
+                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                attribution="Tiles &copy; Esri &mdash; Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP"
+              />
+            </LayersControl.BaseLayer>
+          </LayersControl>
           <Polyline
             positions={positions}
             pathOptions={{ color: "#f59e0b", weight: 3, opacity: 0.85 }}
