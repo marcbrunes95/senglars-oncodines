@@ -21,28 +21,22 @@ type Etapa = {
 
 const etapes = etapesData as unknown as Etapa[];
 
-// Stage zones from the official image km markers (total 101.37 km)
-// CHART_LEFT: left margin for the y-axis labels (~3.5% of image width)
-// CHART_SPAN: usable chart area width (~91% of image width)
-const CHART_LEFT = 3.5;
-const CHART_SPAN = 94;
-const IMAGE_KM = [9.56, 12.02, 7.16, 8.76, 11.72, 8.28, 10.58, 9.00, 7.90, 7.30, 9.09];
-const TOTAL_KM = IMAGE_KM.reduce((a, b) => a + b, 0);
-
-const ZONES = (() => {
-  const zones: { stage: number; left: number; width: number }[] = [];
-  let cumFrac = 0;
-  IMAGE_KM.forEach((km, i) => {
-    const frac = km / TOTAL_KM;
-    zones.push({
-      stage: i + 1,
-      left: CHART_LEFT + cumFrac * CHART_SPAN,
-      width: frac * CHART_SPAN,
-    });
-    cumFrac += frac;
-  });
-  return zones;
-})();
+// Zones hardcoded per alinear-les amb les línies verticals del perfil oficial.
+// E1-E6: calculades amb CHART_LEFT=3.5, CHART_SPAN=94 (correctes).
+// E7-E11: ajustades manualment ~1.3% cap a l'esquerra per corregir la deriva.
+const ZONES: { stage: number; left: number; width: number }[] = [
+  { stage: 1,  left: 3.50,  width: 8.86  },
+  { stage: 2,  left: 12.36, width: 11.15 },
+  { stage: 3,  left: 23.51, width: 6.64  },
+  { stage: 4,  left: 30.14, width: 8.12  },
+  { stage: 5,  left: 38.27, width: 10.87 },
+  { stage: 6,  left: 49.14, width: 7.68  },
+  { stage: 7,  left: 56.82, width: 8.48  },
+  { stage: 8,  left: 65.30, width: 8.35  },
+  { stage: 9,  left: 73.65, width: 7.32  },
+  { stage: 10, left: 80.97, width: 6.77  },
+  { stage: 11, left: 87.74, width: 8.43  },
+];
 
 export default function RouteSection() {
   const [selectedId, setSelectedId] = useState(1);
