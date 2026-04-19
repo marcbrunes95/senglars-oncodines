@@ -49,8 +49,8 @@ export default function RouteSection() {
           La Ruta
         </h2>
 
-        {/* Header visual: perfil d'elevació oficial amb zones clicables per etapa */}
-        <div className="relative w-full rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40 select-none">
+        {/* Header visual: order-2 on mobile (below map), order-1 on md+ (above map) */}
+        <div className="order-2 md:order-1 relative w-full rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40 select-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/header-ruta.jpg"
@@ -79,10 +79,14 @@ export default function RouteSection() {
           </div>
         </div>
 
-        <MapWrapper selectedId={selectedId} onSelect={setSelectedId} />
+        <div className="order-1 md:order-2">
+          <MapWrapper selectedId={selectedId} onSelect={setSelectedId} />
+        </div>
 
         {/* key forces remount → restarts animation on stage change */}
-        <StageStatistics key={selectedId} stage={selected} />
+        <div className="order-3">
+          <StageStatistics key={selectedId} stage={selected} />
+        </div>
       </div>
     </section>
   );

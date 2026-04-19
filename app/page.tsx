@@ -5,44 +5,48 @@ import RouteSection from "@/components/RouteSection";
 import StatsTable from "@/components/StatsTable";
 import TeamSection from "@/components/TeamSection";
 
+type StatColor = "amber" | "blue" | "emerald" | "rose" | "violet" | "cyan" | "orange" | "slate";
+
+const statColorMap: Record<StatColor, { card: string; value: string }> = {
+  amber:   { card: "bg-amber-400/10 border-amber-400/30",   value: "text-amber-400" },
+  blue:    { card: "bg-blue-400/10 border-blue-400/30",     value: "text-blue-300" },
+  emerald: { card: "bg-emerald-400/10 border-emerald-400/30", value: "text-emerald-400" },
+  rose:    { card: "bg-rose-400/10 border-rose-400/30",     value: "text-rose-400" },
+  violet:  { card: "bg-violet-400/10 border-violet-400/30", value: "text-violet-400" },
+  cyan:    { card: "bg-cyan-400/10 border-cyan-400/30",     value: "text-cyan-300" },
+  orange:  { card: "bg-orange-400/10 border-orange-400/30", value: "text-orange-400" },
+  slate:   { card: "bg-slate-700/50 border-slate-600",      value: "text-slate-200" },
+};
+
 type StatItem = {
   emoji: string;
   label: string;
   value: string;
-  accent?: boolean;
+  color: StatColor;
 };
 
 const raceStats: StatItem[] = [
-  { emoji: "🎽", label: "Dorsal",         value: "#256",            accent: true },
-  { emoji: "🏅", label: "Classificació",  value: "13è / 34 equips", accent: true },
-  { emoji: "📍", label: "Distància",      value: "102.42 km" },
-  { emoji: "⛰️",  label: "Desnivell",     value: "+3.512 m" },
-  { emoji: "⏱️",  label: "Temps en mov.", value: "13h 18' 47\"" },
-  { emoji: "⚡",  label: "Velocitat",      value: "7.69 km/h" },
-  { emoji: "🟢", label: "Sortida",        value: "08:01:20" },
-  { emoji: "🏁", label: "Arribada",       value: "21:20:07" },
+  { emoji: "🎽", label: "Dorsal",         value: "#256",            color: "amber" },
+  { emoji: "🏅", label: "Classificació",  value: "13è / 34 equips", color: "blue" },
+  { emoji: "📍", label: "Distància",      value: "102.42 km",       color: "emerald" },
+  { emoji: "⛰️",  label: "Desnivell",     value: "+3.512 m",        color: "rose" },
+  { emoji: "⏱️",  label: "Temps en mov.", value: "13h 18' 47\"",    color: "violet" },
+  { emoji: "⚡",  label: "Velocitat",      value: "7.69 km/h",       color: "cyan" },
+  { emoji: "🟢", label: "Sortida",        value: "08:01:20",         color: "orange" },
+  { emoji: "🏁", label: "Arribada",       value: "21:20:07",         color: "slate" },
 ];
 
-function StatBadge({ emoji, label, value, accent }: StatItem) {
+function StatBadge({ emoji, label, value, color }: StatItem) {
+  const styles = statColorMap[color];
   return (
-    <div
-      className={`rounded-xl px-3 py-3 sm:px-4 flex flex-col gap-1.5 border ${
-        accent
-          ? "bg-amber-400/10 border-amber-400/30"
-          : "bg-slate-800 border-slate-700"
-      }`}
-    >
+    <div className={`rounded-xl px-3 py-3 sm:px-4 flex flex-col gap-1.5 border ${styles.card}`}>
       <div className="flex items-center gap-1.5">
         <span className="text-sm">{emoji}</span>
         <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-500 leading-none">
           {label}
         </span>
       </div>
-      <p
-        className={`font-[family-name:var(--font-barlow)] text-xl font-bold tracking-tight leading-none ${
-          accent ? "text-amber-400" : "text-slate-50"
-        }`}
-      >
+      <p className={`font-[family-name:var(--font-barlow)] text-xl font-bold tracking-tight leading-none ${styles.value}`}>
         {value}
       </p>
     </div>
