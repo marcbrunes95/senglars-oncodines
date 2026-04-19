@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import SenglarLogo from "@/components/SenglarLogo";
 
 const links = [
-  { href: "/", label: "Dashboard" },
-  { href: "/mapa", label: "El Mapa" },
-  { href: "/equip", label: "El Equipo" },
+  { href: "#ruta", label: "La Ruta" },
+  { href: "#records", label: "Records" },
+  { href: "#equip", label: "L'Equip" },
 ];
 
 export default function Navbar() {

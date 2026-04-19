@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="ca"
-      className={`${barlow.variable} ${source.variable} h-full`}
+      className={`${barlow.variable} ${source.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-slate-900 text-slate-50 antialiased font-[family-name:var(--font-source)]">
         <Navbar />
