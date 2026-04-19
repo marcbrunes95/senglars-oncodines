@@ -16,9 +16,34 @@ const source = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Senglars de Bardissa · Oncodines Trail",
+  metadataBase: new URL("https://senglars-oncodines.vercel.app"),
+  title: "Senglars de Bardissa | Oncodines Trail",
   description:
-    "Seguiment en directe de l'equip Senglars de Bardissa a l'Oncodines Trail. Etapes, mapa i estadístiques.",
+    "Una experiència. Un equip. Una gesta. Descobreix la ruta interactiva, les estadístiques i els rècords dels 102 km de cursa.",
+  openGraph: {
+    title: "Senglars de Bardissa | Oncodines Trail",
+    description:
+      "Una experiència. Un equip. Una gesta. Descobreix la ruta interactiva, les estadístiques i els rècords dels 102 km de cursa.",
+    url: "https://senglars-oncodines.vercel.app",
+    siteName: "Senglars de Bardissa",
+    images: [
+      {
+        url: "/foto-equip.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Equip Senglars de Bardissa",
+      },
+    ],
+    locale: "ca_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Senglars de Bardissa | Oncodines Trail",
+    description:
+      "Una experiència. Un equip. Una gesta. Descobreix la ruta interactiva, les estadístiques i els rècords dels 102 km de cursa.",
+    images: ["/foto-equip.jpg"],
+  },
 };
 
 export default function RootLayout({
