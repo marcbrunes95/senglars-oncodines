@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { Clock, MapPin, Timer, TrendingUp } from "lucide-react";
 import equip from "@/app/data/equipo.json";
@@ -25,13 +24,12 @@ function MemberCard({ membre }: { membre: Membre }) {
 
   return (
     <div className="group bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-slate-600 hover:shadow-xl hover:shadow-black/40">
-      <div className="relative w-full h-44 bg-slate-700 shrink-0">
-        <Image
+      <div className="w-full h-44 bg-slate-700 shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={imgSrc}
           alt={`${membre.nom} · Senglars de Bardissa`}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
+          className="w-full h-full object-cover"
           onError={() => setImgSrc("/senglar-placeholder.jpg")}
         />
       </div>
