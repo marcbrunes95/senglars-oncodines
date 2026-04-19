@@ -1,0 +1,29 @@
+[
+  {
+    "corredores": "JOSEP-MARC",
+    "etapa": 1,
+    "iniciFinal": "Castellterçol - Castellcir",
+    "distanciaKm": 9.51,
+    "desnivellPositiu": 257,
+    "ritme": "00:06:21",
+    "tempsMoviment": "01:00:19"
+  },
+  {
+    "corredores": "XAVI-PALAU",
+    "etapa": 2,
+    "iniciFinal": "Castellcir - Sant Miquel Sesperxes",
+    "distanciaKm": 12.99,
+    "desnivellPositiu": 453,
+    "ritme": "00:06:34",
+    "tempsMoviment": "01:25:13"
+  },
+  {
+    "corredores": "PERE-JOAN",
+    "etapa": 3,
+    "iniciFinal": "Sant Miquel Sesperxes - El Figaró",
+    "distanciaKm": 7.54,
+    "desnivellPositiu": 79,
+    "ritme": "00:06:09",
+    "tempsMoviment": "00:46:24"
+  }
+]
