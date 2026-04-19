@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const d=require\\('C:/senglars-oncodines/senglars-oncodines/app/data/ruta.json'\\); console.log\\('Valid JSON, records:', d.length, '| First runner:', d[0].corredores\\)\")",
+      "Bash(node -e \"const d=require\\('./app/data/ruta.json'\\); console.log\\('etapes:',d.length,'totalKm:',d.reduce\\(\\(s,e\\)=>s+e.km,0\\).toFixed\\(2\\)\\)\")"
+    ]
+  }
+}

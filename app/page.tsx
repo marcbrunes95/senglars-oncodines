@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SenglarLogo from "@/components/SenglarLogo";
 import DashboardRecords from "@/components/DashboardRecords";
-import MapWrapper from "@/components/MapWrapper";
+import RouteSection from "@/components/RouteSection";
 import TeamSection from "@/components/TeamSection";
 
 export default function Home() {
@@ -35,30 +35,21 @@ export default function Home() {
         </div>
 
         {/* Foto de l'equip */}
-        <div className="w-full flex flex-col gap-3">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/50">
-            <Image
-              src="/foto-equip.jpg"
-              alt="L'equip Senglars de Bardissa a l'Oncodines Trail"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/50">
+          <Image
+            src="/foto-equip.jpg"
+            alt="L'equip Senglars de Bardissa a l'Oncodines Trail"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </section>
 
-      {/* ── Mapa ──────────────────────────────────── */}
-      <section id="ruta" className="bg-slate-800/50 border-y border-slate-800 px-4 py-12">
-        <div className="max-w-5xl mx-auto flex flex-col gap-6">
-          <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-bold tracking-tight text-slate-50">
-            La Ruta
-          </h2>
-          <MapWrapper />
-        </div>
-      </section>
+      {/* ── Ruta interactiva + Estadístiques ──────── */}
+      <RouteSection />
 
-      {/* ── Dashboard ─────────────────────────────── */}
+      {/* ── Records ───────────────────────────────── */}
       <section id="records" className="bg-slate-900 px-4 py-12">
         <div className="max-w-5xl mx-auto">
           <DashboardRecords />

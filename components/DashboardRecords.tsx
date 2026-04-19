@@ -11,7 +11,7 @@ type Etapa = {
   coords: [number, number];
 };
 
-const data = etapes as Etapa[];
+const data = etapes as unknown as Etapa[];
 
 const fastest   = data.reduce((a, b) => (a.ritme < b.ritme ? a : b));
 const steepest  = data.reduce((a, b) => (a.desnivell > b.desnivell ? a : b));

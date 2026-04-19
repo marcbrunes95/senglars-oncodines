@@ -11,28 +11,43 @@ type Etapa = {
   tramo: string;
   km: number;
   desnivell: number;
+  desnivellKm: number;
   ritme: string;
+  horaInici: string;
+  horaArribada: string;
   tiempo: string;
   coords: [number, number];
 };
 
+interface InteractiveMapProps {
+  selectedId: number;
+  onSelect: (id: number) => void;
+}
+
 const data = etapes as Etapa[];
 const positions = data.map((e) => e.coords as [number, number]);
 
-const markerIcon = L.divIcon({
+const defaultIcon = L.divIcon({
   className: "",
-  html: `<div style="width:14px;height:14px;border-radius:50%;background:#f59e0b;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.5)"></div>`,
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
+  html: `<div style="width:12px;height:12px;border-radius:50%;background:#f59e0b;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.5)"></div>`,
+  iconSize: [12, 12],
+  iconAnchor: [6, 6],
+});
+
+const activeIcon = L.divIcon({
+  className: "",
+  html: `<div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;border:3px solid white;box-shadow:0 0 0 4px rgba(245,158,11,0.35),0 2px 8px rgba(0,0,0,0.6)"></div>`,
+  iconSize: [20, 20],
+  iconAnchor: [10, 10],
 });
 
 const CENTER: [number, number] = [41.69, 2.21];
 
-export default function InteractiveMap() {
+export default function InteractiveMap({ selectedId, onSelect }: InteractiveMapProps) {
   return (
     <div className="w-full flex flex-col md:flex-row gap-4">
       {/* Map */}
-      <div className="w-full md:w-2/3 h-[50vh] md:h-[520px] rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
+      <div className="w-full md:w-2/3 h-[50vh] md:h-[480px] rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/40">
         <MapContainer
           center={CENTER}
           zoom={11}
@@ -51,7 +66,8 @@ export default function InteractiveMap() {
             <Marker
               key={etapa.etapa}
               position={etapa.coords as [number, number]}
-              icon={markerIcon}
+              icon={etapa.etapa === selectedId ? activeIcon : defaultIcon}
+              eventHandlers={{ click: () => onSelect(etapa.etapa) }}
             >
               <Popup>
                 <div style={{ fontFamily: "sans-serif", fontSize: "13px", lineHeight: "1.5" }}>
@@ -60,14 +76,10 @@ export default function InteractiveMap() {
                     <p style={{ color: "#475569" }}>{etapa.corredores}</p>
                   )}
                   {etapa.km && (
-                    <p style={{ color: "#475569" }}>
-                      {etapa.km} km · +{etapa.desnivell} m
-                    </p>
+                    <p style={{ color: "#475569" }}>{etapa.km} km · +{etapa.desnivell} m</p>
                   )}
                   {etapa.tramo && (
-                    <p style={{ color: "#94a3b8", fontSize: "11px", marginTop: 4 }}>
-                      {etapa.tramo}
-                    </p>
+                    <p style={{ color: "#94a3b8", fontSize: "11px", marginTop: 4 }}>{etapa.tramo}</p>
                   )}
                 </div>
               </Popup>
@@ -76,12 +88,17 @@ export default function InteractiveMap() {
         </MapContainer>
       </div>
 
-      {/* Stage list — scrollable sidebar */}
-      <div className="w-full md:w-1/3 max-h-[50vh] md:max-h-[520px] overflow-y-auto flex flex-col gap-2 pr-1">
+      {/* Llista d'etapes clicable */}
+      <div className="w-full md:w-1/3 max-h-[50vh] md:max-h-[480px] overflow-y-auto flex flex-col gap-2 pr-1">
         {data.map((etapa) => (
-          <div
+          <button
             key={etapa.etapa}
-            className="rounded-xl bg-slate-800 border border-slate-700 px-4 py-3 flex flex-col gap-1"
+            onClick={() => onSelect(etapa.etapa)}
+            className={`w-full text-left rounded-xl border px-4 py-3 flex flex-col gap-1 transition-all duration-150 ${
+              etapa.etapa === selectedId
+                ? "bg-amber-400/10 border-amber-400 ring-2 ring-amber-400/30"
+                : "bg-slate-800 border-slate-700 hover:border-slate-500 hover:bg-slate-700/50"
+            }`}
           >
             <div className="flex items-center justify-between">
               <span className="font-[family-name:var(--font-barlow)] text-xs font-semibold tracking-widest uppercase text-amber-400">
@@ -97,7 +114,7 @@ export default function InteractiveMap() {
             {etapa.tramo && (
               <p className="text-slate-500 text-xs">{etapa.tramo}</p>
             )}
-          </div>
+          </button>
         ))}
       </div>
     </div>

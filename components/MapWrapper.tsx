@@ -2,6 +2,11 @@
 
 import dynamic from "next/dynamic";
 
+interface MapWrapperProps {
+  selectedId: number;
+  onSelect: (id: number) => void;
+}
+
 const InteractiveMap = dynamic(() => import("@/components/InteractiveMap"), {
   ssr: false,
   loading: () => (
@@ -9,6 +14,6 @@ const InteractiveMap = dynamic(() => import("@/components/InteractiveMap"), {
   ),
 });
 
-export default function MapWrapper() {
-  return <InteractiveMap />;
+export default function MapWrapper({ selectedId, onSelect }: MapWrapperProps) {
+  return <InteractiveMap selectedId={selectedId} onSelect={onSelect} />;
 }
