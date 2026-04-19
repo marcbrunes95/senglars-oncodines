@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Mountain } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import SenglarLogo from "@/components/SenglarLogo";
 
 const links = [
   { href: "/", label: "Dashboard" },
@@ -20,7 +21,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 font-[family-name:var(--font-barlow)] text-lg font-semibold tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
         >
-          <Mountain size={20} strokeWidth={2} />
+          <SenglarLogo className="w-8 h-8" />
           Senglars de Bardissa
         </Link>
 
